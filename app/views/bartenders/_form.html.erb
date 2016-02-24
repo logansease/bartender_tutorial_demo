@@ -1,0 +1,33 @@
+<%= form_for(@bartender) do |f| %>
+  <% if @bartender.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bartender.errors.count, "error") %> prohibited this bartender from being saved:</h2>
+
+      <ul>
+      <% @bartender.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :bar %><br>
+    <%= f.text_field :bar %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :user_id, :value => @bartender.user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :is_working %><br>
+    <%= f.check_box :is_working %>
+  </div>
+
+    <div class="field">
+      <%= f.file_field :background %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

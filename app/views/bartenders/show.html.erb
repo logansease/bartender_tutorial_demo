@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<div>
+<%= render "bartender_thumb", :bartender => @bartender %>
+</div>
+
+<div class="admin_actions block opaque left">
+<% if current_user and ( current_user == @bartender.user or current_user.admin ) %>
+    <%= link_to 'Edit', edit_bartender_path(@bartender), :class => "btn btn-primary" %>
+
+    <%= link_to "delete", @bartender, :method => :delete, :data => { :confirm => "Are you sure?"},
+                :title => "Delete #{@bartender.user.name}", :class => "btn btn-danger"%>
+
+<% end %>
+
+  <div>
+    <%=  render "relationships/connect_button", :followed_id => @bartender.id, :type => RELATIONSHIP_TYPE_BARTENDER, :object => @bartender %>
+  </div>
+
+</div>
+
+<% if @bartender.background %>
+    <%= render "shared/full_screen_image", :image => @bartender.background_url %>
+<% else %>
+    <%= render "shared/full_screen_image", :image => "http://pad1.whstatic.com/images/thumb/3/30/Get-Traveling-Bartender-Gigs-Step-8.jpg/670px-Get-Traveling-Bartender-Gigs-Step-8.jpg"%>
+<% end %>

@@ -1,0 +1,2 @@
+$("#connect_form").replaceWith("<%= escape_javascript(render('relationships/connected',:followed_id => @followed_id, :type => @type ))%>")
+$("#connection_count").html("<%= @object.followers.count%> followers")

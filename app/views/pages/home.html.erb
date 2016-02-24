@@ -1,0 +1,17 @@
+<% if signed_in?%>
+    <p>We are currently in development. Pardon the mess.</p>
+
+    <h3>Following Bartenders</h3>
+    <% current_user.following_bartenders.each do |bartender| %>
+        <%= render "bartenders/bartender_thumb", :bartender => bartender %>
+    <% end %>
+
+<% else %>
+
+
+<p>We are currently in development. Pardon the mess.</p>
+
+<%= link_to "Sign up now!", signup_path, :class => "signup_button round"%>      
+
+<% end %>
+

@@ -1,0 +1,12 @@
+<% followed_id = "" if local_assigns[:followed_id].nil? %>
+<% type = "" if local_assigns[:type].nil? %>
+
+
+<%= form_for(current_user.relationships.find_by_followed_id_and_relationship_type(followed_id,type),
+             :html => {:method => :delete, :id => "connect_form" },
+             :remote =>true) do |f| %>
+
+ 	<%= f.submit "connected!", :class => "btn btn-primary"  %>
+
+
+<% end%>

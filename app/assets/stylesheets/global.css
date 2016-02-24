@@ -1,0 +1,328 @@
+
+
+/* Defaults */
+
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video, details, summary {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+vertical-align: baseline;
+background: transparent;
+}
+
+#grey_text {
+    color: #ADADAD;
+}
+
+/* Display as block elements */
+article, aside, figure, footer, header, hgroup, nav, section, details, summary {display: block;}
+
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {overflow-y: scroll;}
+
+/* we use a lot of ULs that aren't bulleted.
+don't forget to restore the bullets within content. */
+ul {list-style: none;}
+
+blockquote, q {quotes: none;}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {content: ''; content: none;}
+
+a {
+    background: none repeat scroll 0 0 transparent;
+    color: #00c0f7;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+del {text-decoration: line-through;}
+
+abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+
+/* tables still need cellspacing="0" in the markup */
+table {border-collapse: collapse; border-spacing: 0;}
+th {font-weight: bold; vertical-align: bottom;}
+td {font-weight: normal; vertical-align: top;}
+
+hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+
+input, select {vertical-align: middle;}
+
+pre {
+white-space: pre; /* CSS2 */
+white-space: pre-wrap; /* CSS 2.1 */
+white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+word-wrap: break-word; /* IE */
+}
+
+input[type="radio"] {vertical-align: text-bottom;}
+input[type="checkbox"] {vertical-align: bottom;}
+.ie7 input[type="checkbox"] {vertical-align: baseline;}
+.ie6 input {vertical-align: text-bottom;}
+
+select, input, textarea {font: 99% sans-serif;}
+
+table {font-size: inherit; font: 100%;}
+
+small {font-size: 85%;}
+
+strong {font-weight: bold;}
+
+td, td img {vertical-align: top;}
+
+/* Make sure sup and sub don't screw with your line-heights
+gist.github.com/413930 */
+sub, sup {font-size: 75%; line-height: 0; position: relative;}
+sup {top: -0.5em;}
+sub {bottom: -0.25em;}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {font-family: monospace, sans-serif;}
+
+/* hand cursor on clickable elements */
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {cursor: pointer;}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {margin: 0;}
+
+/* make buttons play nice in IE */
+button {width: auto; overflow: visible;}
+
+/* scale images in IE7 more attractively */
+.ie7 img {-ms-interpolation-mode: bicubic;}
+
+/* prevent BG image flicker upon hover */
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+
+/* let's clear some floats */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+/* end of defaults */
+
+
+/* Custom Styling */
+
+/* body - here you can specify the global font-size, color and font-family */
+
+body {
+    color: #2E4144;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    margin: 0;
+}
+
+
+
+/* Header */
+
+#header_container
+{
+    width: 100%;
+    background: none repeat scroll 0 0 #FFF;
+}
+
+#header {
+    height: 50px;
+    margin: 0 auto;
+    padding: 0 0px;
+    width: 1280px;
+}
+#header .c1, #header .c2, #header .c3 {
+    position: relative;
+    height: 50px;
+}
+.header_columns .c1 {
+    float: left;
+    width: 200px;
+}
+.header_columns .c2 {
+    float: left;
+    text-align: right;
+    width: 480px;
+}
+.header_columns .c3 {
+    float: right;
+    width:intrinsic; /* For Safari, see https://developer.mozilla.org/en-US/docs/CSS/width */
+    width:-moz-fit-content;
+    width:-webkit-fit-content;
+    width:fit-content;
+}
+.logo img {
+    border: medium none;
+    padding-top: 3px;
+    max-height: 40px;
+}
+#header #search {
+    background: none repeat scroll 0 0 #F5F5F5;
+    border: medium none;
+    height: 34px;
+    margin: 7px -4px 7px 7px;
+    padding: 2px 10px;
+    width: 180px;
+    border: 1px solid #E8E6E6;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#header #submit {
+    background: none repeat scroll 0 0 #07afee;
+    border: medium none;
+    height: 34px;
+    margin: 7px 0;
+    padding: 2px 10px;
+    width: 34px;
+}
+.icon.search {
+   color: #fff;
+}
+
+
+
+
+.main-nav > ul {
+    display: table;
+    margin: 0;
+}
+.main-nav > ul > li {
+    display: table-cell;
+}
+.main-nav > ul > li a {
+    display: block;
+    height: 30px;
+    line-height: 28px;
+    padding: 10px;
+}
+.main-nav > ul > li a {
+    color: #2E4144;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: lowercase;
+}
+.main-nav > ul > li:hover, .main-nav > ul > li a:hover {
+    background: none repeat scroll 0 0 #07AFEE;
+    color: #fff;
+}
+
+a:hover
+{
+    color: #333333;
+    text-decoration: none;
+}
+
+p{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+}
+
+h1
+{
+    font-weight: 700;
+}
+h2
+{
+    font-weight: 600;
+}
+
+
+
+/* Footer styling */
+
+#footer {
+    background: none repeat scroll 0 0 #31363A;
+    color: #FFFFFF;
+    margin: 0px auto 0;
+    min-width: 1280px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+/* footer logo */
+
+.footer-logo {
+    background: url("/assets/rails.png") no-repeat scroll left center transparent;
+    height: 65px;
+    margin: 0 auto;
+    padding: 0 26px;
+    width: 25px;
+}
+
+/* footer nav */
+
+.footer-nav {
+    margin: 0 auto;
+    width:intrinsic; /* For Safari, see https://developer.mozilla.org/en-US/docs/CSS/width */
+    width:-moz-fit-content;
+    width:-webkit-fit-content;
+    width:fit-content;
+}
+.footer-nav > ul {
+    display: table;
+    margin: 0;
+}
+.footer-nav > ul > li {
+    display: table-cell;
+}
+.footer-nav > ul > li a {
+    display: block;
+    height: 30px;
+    line-height: 28px;
+    padding: 10px;
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: lowercase;
+    font-size: 20px;
+}
+.footer-nav > ul > li:hover, .footer-nav > ul > li a:hover {
+    color: #07afee;
+}
+.copyright {
+    font-size: 12px;
+}
+
+/* mobile fix for buttons -- REMOVED by Logan For Checkbox Fix in safari
+input, textarea {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+*/
+
+
+/* added by logan */
+
+/* Generic form stuff */
+
+
+
+.field
+{
+    padding-top: 15px;
+}
+
+.actions
+{
+    padding-top: 15px;
+}
+
+input[type="radio"] {vertical-align: text-bottom;}
+
+textarea
+{
+   width: 500px;
+}

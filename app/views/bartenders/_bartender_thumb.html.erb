@@ -1,0 +1,8 @@
+<div class="md-col-5 left padded block opaque">
+  <%= link_to image_for(bartender.user, :size => 100), bartender %>
+  <p><%= link_to bartender.user.name, bartender %> </p>
+  <p>Works at: <%= bartender.bar %> </p>
+  <p class="<%= bartender.is_working ? "green" : "red" %>">
+    <%= bartender.is_working ? "Working" :"Not Working" %>
+  </p>
+</div>

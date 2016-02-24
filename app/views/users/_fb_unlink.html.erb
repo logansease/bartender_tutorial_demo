@@ -1,0 +1,8 @@
+
+<%= form_tag fb_unlink_user_path, {:name=>'unlink_form'}  do %>
+  <%= hidden_field_tag :fb_user_id, "" %>
+<div id="fb-root"></div>    
+    <p>
+          <%= link_to facebook_logo, "#", {:onclick => "document.unlink_form.submit();"} %>  Unlink
+    </p>
+<% end %>

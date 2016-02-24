@@ -1,0 +1,9 @@
+<% if current_user and object == current_user %>
+    <span class="grey_text" id="connection_count"><%= object.follower_count %> followers</span>
+<% elsif current_user and object.followers.include? current_user %>
+    <%= render 'relationships/connected', :followed_id => followed_id, :type => type %>
+    <span class="grey_text" id="connection_count"><%= object.follower_count %> followers</span>
+<%else %>
+    <%= render 'relationships/connect', :followed_id => followed_id, :type => type  %>
+    <span class="grey_text" id="connection_count"><%= object.follower_count %> followers</span>
+<%end%>

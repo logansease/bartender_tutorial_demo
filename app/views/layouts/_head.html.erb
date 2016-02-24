@@ -1,0 +1,54 @@
+<% if @object and @object.respond_to? :meta_title and @object.meta_title %>
+    <title><%= @object.meta_title %></title>
+<% else %>
+    <title><%= CONSTANTS[  :app_name] %> </title>
+<% end %>
+
+<% if @object and @object.respond_to? :meta_description and @object.meta_description %>
+    <meta name="description" content=" <%= @object.meta_description %>">
+<% else %>
+    <meta name="description" content="<%=CONSTANTS[  :app_description]%>">
+<%end %>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<%= csrf_meta_tag %>
+
+    <%= javascript_include_tag "application" %>
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <%= stylesheet_link_tag 'boot_strapped'%>
+    <%= stylesheet_link_tag 'generic'%>
+
+    <%= stylesheet_link_tag 'jquery-ui'%>
+    <%= stylesheet_link_tag 'jquery.pathSelector-all'%>
+
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"/>
+    <![endif]-->
+
+
+    <% if Rails.env.production? %>
+    <!-- Google Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '<%= CONSTANTS[  :google_analytics_id] %>', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+    <!-- End Google Analytics -->
+
+    <% end %>
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">

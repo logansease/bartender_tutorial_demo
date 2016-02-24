@@ -1,0 +1,17 @@
+<% followed_id = nil if local_assigns[:followed_id].nil? %>
+<% type = nil if local_assigns[:type].nil? %>
+
+  <% if !current_user %>
+     <%= button_to "connect", signin_path + "?redirect_to=" + request.fullpath, :method => "get" %>
+  <% else %>
+
+  <%= form_for(current_user.relationships.build(:followed_id => followed_id, :relationship_type => type ),
+               :html => { :id => "connect_form"}, :remote =>true ) do |f| %>
+
+      <%= f.hidden_field :followed_id %>
+      <%= f.hidden_field :relationship_type %>
+      <%= f.submit "connect", :class => "btn btn-primary" %>
+
+  <% end%>
+
+  <% end %>
